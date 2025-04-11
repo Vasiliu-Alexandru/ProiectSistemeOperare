@@ -4,6 +4,21 @@
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <stdlib.h>
+
+#define MAX_USERNAME 64 // lungime maxima username (63 caractere + terminator null)
+#define MAX_CLUE 256    // lungime maxima username (255 caractere + terminator null)
+
+typedef struct {
+    int   treasure_id;
+    char  username[MAX_USERNAME];
+    float latitude;
+    float longitude;
+    char  clue[MAX_CLUE];
+    int   value;
+}Treasure;
+
+
+
 int main(int argc, char **argv)
 {
   char *buffer=malloc(4096*sizeof(char *));
